@@ -6,7 +6,17 @@
   os: Visual Studio 2015
   configuration: Release
   platform: ARM
+  
+  install:
+    - rd /s /q C:\Tools\nuget
+    - md C:\Tools\nuget
+    - ps: (New-Object Net.WebClient).DownloadFile('http://dist.nuget.org/win-x86-commandline/v3.1.0-beta/nuget.exe', 'C:\Tools\nuget\nuget.exe')
+
+  before_build:
+    - nuget restore TestApp\TestApp.sln
+
   build:
     project: TestApp\TestApp.sln
+
 # TODO change back
     verbosity: detailed 
