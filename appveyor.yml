@@ -1,0 +1,12 @@
+# "fall back" configuration for all other branches, including "develop"
+# no "branches" section defined
+# AppveyorDeploy.ps1 will deploy only on "develop"
+-
+  version: 1.4.0.{build}
+  os: Visual Studio 2015
+  configuration: Release
+  platform: ARM
+  build:
+    project: TestApp\TestApp.sln
+# TODO change back
+    verbosity: detailed 
