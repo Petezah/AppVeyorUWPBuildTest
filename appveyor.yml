@@ -18,5 +18,3 @@
   build:
     project: TestApp\TestApp.sln
 
-# TODO change back
-    verbosity: detailed 
